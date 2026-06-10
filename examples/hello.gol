@@ -1,0 +1,71 @@
+// ── Utility functions ─────────────────────────────────────────────────────────
+
+func isEven(n int) bool {
+    return n % 2 == 0;
+}
+
+func increment(ref x int) {
+    x = x + 1;
+}
+
+func factorial(n int) int {
+    if n <= 1 {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+// ── Program entry point ───────────────────────────────────────────────────────
+
+func main() {
+
+    // Short declaration
+    greeting := "Hello, Gol!";
+
+    println(greeting);
+    println("─────────────────────");
+
+    // Even / odd check using ref parameter to advance the counter
+    println("Even and odd from 1 to 6:");
+
+    var i int = 1;
+    for i <= 6 {
+        if isEven(i) {
+            println(i, " is even");
+        } else {
+            println(i, " is odd");
+        }
+        increment(&i);
+    }
+
+    println("─────────────────────");
+
+    // Factorials from 1 to 6
+    println("Factorials:");
+
+    var n int = 1;
+    for n <= 6 {
+        var result int = factorial(n);
+        println(n, "! = ", result);
+        n = n + 1;
+    }
+
+    println("─────────────────────");
+
+    // Boolean expressions
+    var a int = 10;
+    var b int = 20;
+    var bothPositive bool = a > 0 && b > 0;
+
+    if bothPositive {
+        println("Both a and b are positive");
+    }
+
+    if a > b {
+        println("a is greater");
+    } else if a == b {
+        println("a and b are equal");
+    } else {
+        println("b is greater");
+    }
+}
