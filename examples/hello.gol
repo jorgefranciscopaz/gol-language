@@ -1,6 +1,6 @@
 // ── Utility functions ─────────────────────────────────────────────────────────
 
-func isEven(n int) bool {
+func (n int) bool {
     return n % 2 == 0;
 }
 
@@ -19,10 +19,7 @@ func factorial(n int) int {
 
 func main() {
 
-    // Short declaration
-    greeting := "Hello, Gol!";
-
-    println(greeting);
+    println("Hello, Gol!");
     println("─────────────────────");
 
     // Even / odd check using ref parameter to advance the counter
